@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   putchar.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 12:25:13 by glavette          #+#    #+#             */
-/*   Updated: 2021/11/10 17:12:50 by glavette         ###   ########.fr       */
+/*   Created: 2021/11/10 16:52:22 by glavette          #+#    #+#             */
+/*   Updated: 2021/11/10 17:12:47 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+#include "libft.h"
 
-#endif
+int	ft_putchar(va_list ap)
+{
+	char	a;
+
+	a = va_arg(ap, char);
+	return (write (1, &a, 1));
+}

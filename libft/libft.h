@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 12:25:13 by glavette          #+#    #+#             */
-/*   Updated: 2021/11/10 17:12:50 by glavette         ###   ########.fr       */
+/*   Created: 2021/11/10 16:55:38 by glavette          #+#    #+#             */
+/*   Updated: 2021/11/10 16:57:54 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+#include "../printf.h"
 
 #endif
