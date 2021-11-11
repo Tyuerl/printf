@@ -1,42 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putnbr.c                                           :+:      :+:    :+:   */
+/*   putprcnt.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:03:05 by glavette          #+#    #+#             */
-/*   Updated: 2021/11/10 17:12:46 by glavette         ###   ########.fr       */
+/*   Created: 2021/11/11 16:52:51 by glavette          #+#    #+#             */
+/*   Updated: 2021/11/11 19:28:40 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-int ft_putnbr1(va_list ap)
+int	ft_putprcnt(va_list ap)
 {
-	int	n;
-
-	n = va_arg(ap, int);
-	ft_putnbr(n);
-}
-
-void	ft_putnbr(int n)
-{
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
-		write(1, '-', 1);
-		ft_putnbr_fd(-n);
-	}
-	else if (n < 10)
-		write(1 ,n + '0', 1);
-	else
-	{
-		ft_putnbr_fd(n / 10);
-		write(1, n % 10 + '0', 1);
-	}
+	write(1, "%", 1);
+	return (1);
 }

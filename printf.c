@@ -6,7 +6,7 @@
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:52:05 by glavette          #+#    #+#             */
-/*   Updated: 2021/11/10 17:12:50 by glavette         ###   ########.fr       */
+/*   Updated: 2021/11/11 19:33:21 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_prcnt(const char *str, va_list ap)
 		count += ft_putchar(ap);
 	if (*str == 's')
 		count += ft_putstr(ap);
-	//if (*str == 'p')
-	//	count += ft_
+	if (*str == 'p')
+		count += ft_cell_code(ap);
 	if (*str == 'd' || *str == 'i')
 		count += ft_putnbr(ap);
 	if (*str == 'u')
@@ -33,6 +33,7 @@ int	ft_prcnt(const char *str, va_list ap)
 		count += ft_putxdm_upp(ap);
 	if (*str == '%')
 		count += ft_putprcnt(ap);
+	return (0);
 }
 
 int	ft_printf(const char *str, ...)
@@ -56,9 +57,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(ap);
 	return (count);
-}
-
-int	main(int argc, char **argv)
-{
-	ft_printf(argv[1]);
 }

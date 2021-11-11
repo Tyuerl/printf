@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   putchar.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 16:55:38 by glavette          #+#    #+#             */
-/*   Updated: 2021/11/10 16:57:54 by glavette         ###   ########.fr       */
+/*   Created: 2021/11/10 16:52:22 by glavette          #+#    #+#             */
+/*   Updated: 2021/11/11 19:29:44 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-#include "../printf.h"
+#include "printf.h"
 
-#endif
+int	ft_putchar(va_list ap)
+{
+	char	a;
+
+	a = va_arg(ap, int);
+	return (write (1, &a, 1));
+}

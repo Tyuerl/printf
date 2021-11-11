@@ -1,4 +1,5 @@
-srcs		= printf.c
+srcs		= printf.c putchar.c putnbr.c putprcnt.c putstr.c putunbr.c putxdm_low.c putxdm_upp.c
+
 DEL			= ${SRCS:.c=.o}
 
 NAME		= printf
@@ -9,15 +10,15 @@ RM 			= rm -f
 
 FLAGS		= -Wall -Wextra -Werror
 
-GCC 		= gcc
+GCC		 	= gcc
 
 LIB			= ar
 
 FLAGS_LIB	= rc
 
-HEAD		= ${NAME}.h
+HEAD		= printf.h
 
-.PHONY:		all clean fclean re
+.PHONY: all clean fclean re
 
 all: 		${NAME}.a
 
@@ -26,10 +27,13 @@ all: 		${NAME}.a
 			${GCC} ${FLAGS} ${INCLUDES} -c $< -o ${<:.c=.o}		
 
 ${NAME}.a:	${DEL} ${HEAD}
-			${LIB}  ${FLAGS_LIB} ${NAME} ${DEL}
+			${LIB}  ${FLAGS_LIB} ${NAME}.a ${DEL}
 
 clean:	
 			${RM} ${DEL}
 
 fclean:		clean
 			${RM} ${NAME}.a
+
+re:			fclean all	
+
