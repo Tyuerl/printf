@@ -6,11 +6,11 @@
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:34:53 by glavette          #+#    #+#             */
-/*   Updated: 2021/12/26 04:37:36 by glavette         ###   ########.fr       */
+/*   Updated: 2021/12/26 20:09:48 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/printf.h"
+#include "include/printf.h"
 
 void	ft_itoa_base(char *base, unsigned int n)
 {

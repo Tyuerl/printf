@@ -6,11 +6,11 @@
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:52:05 by glavette          #+#    #+#             */
-/*   Updated: 2021/12/26 04:37:42 by glavette         ###   ########.fr       */
+/*   Updated: 2021/12/26 22:17:53 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/printf.h"
+#include "include/printf.h"
 
 int	ft_prcnt(const char *str, va_list ap)
 {
@@ -32,8 +32,8 @@ int	ft_prcnt(const char *str, va_list ap)
 	if (*str == 'X')
 		count += ft_putxdm_upp(ap);
 	if (*str == '%')
-		count += ft_putprcnt(ap);
-	return (0);
+		count += ft_putprcnt();
+	return (count);
 }
 
 int	ft_printf(const char *str, ...)
@@ -57,14 +57,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(ap);
 	return (count);
-}
-
-int	main(void)
-{
-	int	i;
-	int	j;
-
-	i = printf("ALALA\n %d", 12312);
-	j = ft_printf("ALALA\n %d", 12312);
-	return (0);
 }

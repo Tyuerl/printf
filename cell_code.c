@@ -6,11 +6,11 @@
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:51:48 by glavette          #+#    #+#             */
-/*   Updated: 2021/12/26 04:37:43 by glavette         ###   ########.fr       */
+/*   Updated: 2021/12/26 22:08:46 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/printf.h"
+#include "include/printf.h"
 
 static void	ft_itoa_base1(char *base, unsigned long long n)
 {
@@ -32,6 +32,8 @@ int	ft_len_num16(unsigned long long n)
 {
 	int	i;
 
+	if (n == 0)
+		return (1);
 	i = 0;
 	if (n < 0)
 		i++;
@@ -43,7 +45,7 @@ int	ft_len_num16(unsigned long long n)
 	return (i);
 }
 
-static int	ft_len_num(unsigned long long n)
+int	ft_len_num(unsigned long long n)
 {
 	int	i;
 

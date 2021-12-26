@@ -6,11 +6,11 @@
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:18:14 by glavette          #+#    #+#             */
-/*   Updated: 2021/12/26 04:37:35 by glavette         ###   ########.fr       */
+/*   Updated: 2021/12/26 20:09:45 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/printf.h"
+#include "include/printf.h"
 
 static int	ft_dec_to_hex(unsigned int n)
 {
