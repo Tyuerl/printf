@@ -1,39 +1,31 @@
-srcs		= printf.c putchar.c putnbr.c putprcnt.c putstr.c putunbr.c putxdm_low.c putxdm_upp.c
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: glavette <glavette@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/26 04:52:21 by glavette          #+#    #+#              #
+#    Updated: 2021/12/26 05:39:04 by glavette         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-DEL			= ${SRCS:.c=.o}
-
-NAME		= printf
-
-INCLUDES	= -I.
-
-RM 			= rm -f
-
-FLAGS		= -Wall -Wextra -Werror
-
-GCC		 	= gcc
-
-LIB			= ar
-
-FLAGS_LIB	= rc
-
-HEAD		= printf.h
+SRCS		=	printf.c putprcnt.c putstr.c putunbr.c putxdm_low.c putxdm_upp.c cell_code.c
+NAME		=	libftprintf.a
+GCC			= 	gcc
+FLAGS		=	-Wall -Wextra -Werror -c
+OBJS		=	$(SRCS:.c=.o)
+INCLUDES	= -I ./indlude
+HEAD		= ./include/printf.h
 
 .PHONY: all clean fclean re
 
-all: 		${NAME}.a
+all:		$(NAME)
 
-.c.o:		${HEAD}
-			
-			${GCC} ${FLAGS} ${INCLUDES} -c $< -o ${<:.c=.o}		
-
-${NAME}.a:	${DEL} ${HEAD}
-			${LIB}  ${FLAGS_LIB} ${NAME}.a ${DEL}
-
+$(NAME):	$(OBJS) 
+			$(GCC) $(FLAGS) $(INCLUDES) $(SRCS)
 clean:	
-			${RM} ${DEL}
-
+			rm -f ${OBJS}
 fclean:		clean
-			${RM} ${NAME}.a
-
-re:			fclean all	
-
+			rm -f $(NAME)
+re:			fclean all

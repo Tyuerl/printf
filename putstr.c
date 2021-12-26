@@ -6,11 +6,11 @@
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:01:05 by glavette          #+#    #+#             */
-/*   Updated: 2021/11/11 19:28:39 by glavette         ###   ########.fr       */
+/*   Updated: 2021/12/26 04:37:40 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../include/printf.h"
 
 int	ft_strlen(const char *s)
 {
@@ -33,4 +33,20 @@ int	ft_putstr(va_list ap)
 
 	a = va_arg(ap, char *);
 	return (write (1, a, ft_strlen(a)));
+}
+
+int	ft_putchar(va_list ap)
+{
+	char	a;
+
+	a = va_arg(ap, int);
+	return (write (1, &a, 1));
+}
+
+int	ft_putcharint(int ap)
+{
+	char	a;
+
+	a = ap;
+	return (write (1, &a, 1));
 }

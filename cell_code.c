@@ -6,11 +6,11 @@
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:51:48 by glavette          #+#    #+#             */
-/*   Updated: 2021/11/11 19:06:20 by glavette         ###   ########.fr       */
+/*   Updated: 2021/12/26 04:37:43 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <printf.h>
+#include "../include/printf.h"
 
 static void	ft_itoa_base1(char *base, unsigned long long n)
 {
@@ -28,7 +28,7 @@ static void	ft_itoa_base1(char *base, unsigned long long n)
 	}
 }
 
-static int	ft_len_num(unsigned long long n)
+int	ft_len_num16(unsigned long long n)
 {
 	int	i;
 
@@ -43,21 +43,41 @@ static int	ft_len_num(unsigned long long n)
 	return (i);
 }
 
+static int	ft_len_num(unsigned long long n)
+{
+	int	i;
+
+	i = 0;
+	if (n < 0)
+	{
+		i++;
+		i++;
+		n /= 10;
+		n = -n;
+	}
+	while (n)
+	{
+		i++;
+		n /= 10;
+	}
+	return (i);
+}
+
 static int	ft_dec_to_hex1(unsigned long long n)
 {
 	char	hex[17];
-	 int	i;
+	int		i;
 
-	 i = -1;
-	 while (++i < 10)
-		 hex[i] = '0' + i;
+	i = -1;
+	while (++i < 10)
+		hex[i] = '0' + i;
 	i--;
 	while (++i < 16)
 		hex[i] = 'a' - 10 + i;
 	i = 0;
 	hex [16] = 0;
 	ft_itoa_base1(hex, n);
-	return (ft_len_num(n));
+	return (ft_len_num16(n));
 }
 
 int	ft_cell_code(va_list ap)

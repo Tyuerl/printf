@@ -6,11 +6,11 @@
 /*   By: glavette <glavette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:34:53 by glavette          #+#    #+#             */
-/*   Updated: 2021/11/11 19:44:34 by glavette         ###   ########.fr       */
+/*   Updated: 2021/12/26 04:37:36 by glavette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../include/printf.h"
 
 void	ft_itoa_base(char *base, unsigned int n)
 {
@@ -28,36 +28,21 @@ void	ft_itoa_base(char *base, unsigned int n)
 	}
 }
 
-static int	ft_len_num(unsigned int	n)
-{
-	int	i;
-
-	i = 0;
-	if (n < 0)
-		i++;
-	while (n)
-	{
-		i++;
-		n /= 16;
-	}
-	return (i);
-}
-
 static int	ft_dec_to_hex(unsigned int n)
 {
 	char	hex[17];
-	 int	i;
+	int		i;
 
-	 i = -1;
-	 while (++i < 10)
-		 hex[i] = '0' + i;
+	i = -1;
+	while (++i < 10)
+		hex[i] = '0' + i;
 	i--;
 	while (++i < 16)
 		hex[i] = 'a' - 10 + i;
 	i = 0;
 	hex [16] = 0;
 	ft_itoa_base(hex, n);
-	return (ft_len_num(n));
+	return (ft_len_num16(n));
 }
 
 int	ft_putxdm_low(va_list ap)
